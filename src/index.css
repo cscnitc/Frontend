@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 98%;
+
+    --card: 222 47% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 222 47% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 142 100% 50%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 223 47% 20%;
+    --muted-foreground: 215 20% 75%;
+
+    --accent: 142 100% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 223 47% 20%;
+    --input: 223 47% 20%;
+    --ring: 142 100% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border selection:bg-cyber-green/30 selection:text-white;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-cyber-blue text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-lg;
+  }
+  
+  .neo-blur {
+    @apply backdrop-blur-lg bg-cyber-blue/70 border border-cyber-green/20 rounded-xl;
+  }
+  
+  .green-glow {
+    @apply transition-all duration-300 hover:text-cyber-green hover:border-cyber-green hover:shadow-[0_0_5px_theme(colors.cyber.green),0_0_10px_theme(colors.cyber.green)];
+  }
+
+  .green-glow-text {
+    @apply text-cyber-green drop-shadow-[0_0_3px_theme(colors.cyber.green)];
+  }
+  
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 md:mb-10 inline-block relative;
+  }
+  
+  .section-title::after {
+    @apply content-[''] absolute bottom-0 left-0 h-[3px] bg-cyber-green animate-draw-line;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg;
+  }
+  
+  .matrix-grid {
+    background-image: 
+      linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
