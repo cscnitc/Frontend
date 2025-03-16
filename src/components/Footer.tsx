@@ -6,8 +6,18 @@ const Footer: React.FC = () => {
   const navigate = useNavigate();
 
   const handleNavigation = (path: string) => {
-    navigate(path);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (path === '/about') {
+      navigate('/');
+      setTimeout(() => {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // Delay to ensure the page is loaded
+    } else {
+      navigate(path);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -85,6 +95,13 @@ const Footer: React.FC = () => {
               <button className="bg-cyber-green text-cyber-blue px-4 py-2 rounded-r-md hover:bg-cyber-light-green transition-colors">
                 Subscribe
               </button>
+            </div>
+            <div className="flex items-bottom mt-5">
+              <img
+                src="/nitclogo.png"
+                alt="Nitc logo"
+                className="h-35 w-28 mr-2"
+                ></img>
             </div>
           </div>
         </div>

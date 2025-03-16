@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Homepage from "./components/homepage";
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import EventsSection from './components/EventsSection';
@@ -27,8 +28,7 @@ const App = () => (
       <BrowserRouter>
         <Navbar /> {/* Navbar is always visible */}
         <Routes>
-          <Route path="/" element={<HeroSection />} />
-          <Route path="/about" element={<AboutSection />} />
+          <Route path="/" element={<Homepage />} />
           <Route path="/events" element={<EventsSection />} />
           <Route path="/projects" element={<ProjectsSection />} />
           <Route path="/team" element={<TeamSection />} />
