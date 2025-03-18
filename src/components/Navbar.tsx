@@ -1,37 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isSolid, setIsSolid] = useState(false);
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const isHeroSection = location.pathname === '/';
+
+  // Scroll effect for solid navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      const aboutSection = document.getElementById("about");
+      if (aboutSection) {
+        const aboutTop = aboutSection.getBoundingClientRect().top;
+        setIsSolid(aboutTop <= 100); // Change threshold if needed
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const handleNavigation = (path: string) => {
     setIsMenuOpen(false);
-    navigate(path);
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top when navigating
+    if (path === "/about") {
+      if (location.pathname === "/") {
+        document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate("/");
+        setTimeout(() => {
+          document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    } else {
+      navigate(path);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-cyber-blue/90 backdrop-blur-md shadow-md" : "bg-cyber-dark-blue"
+        isHeroSection && !isSolid ? "bg-transparent" : "bg-cyber-dark-blue/95 backdrop-blur-md shadow-md"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,15 +62,10 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-7">
-            {[
-              { name: "Home", path: "/" },
-              { name: "About", path: "/about" },
-              { name: "Events", path: "/events" },
-              { name: "Projects", path: "/projects" },
-              { name: "Team", path: "/team" },
-              { name: "Resources", path: "/resources" },
-              { name: "Contact", path: "/contact" },
-            ].map(({ name, path }) => (
+            {[{ name: "Home", path: "/" }, { name: "About", path: "/about" },
+              { name: "Events", path: "/events" }, { name: "Projects", path: "/projects" },
+              { name: "Team", path: "/team" }, { name: "Resources", path: "/resources" },
+              { name: "Contact", path: "/contact" }].map(({ name, path }) => (
               <button
                 key={name}
                 onClick={() => handleNavigation(path)}
@@ -81,15 +95,10 @@ const Navbar: React.FC = () => {
         )}
       >
         <div className="bg-cyber-dark-blue/95 backdrop-blur-md h-full flex flex-col pt-5">
-          {[
-            { name: "Home", path: "/" },
-            { name: "About", path: "/about" },
-            { name: "Events", path: "/events" },
-            { name: "Projects", path: "/projects" },
-            { name: "Team", path: "/team" },
-            { name: "Resources", path: "/resources" },
-            { name: "Contact", path: "/contact" },
-          ].map(({ name, path }) => (
+          {[{ name: "Home", path: "/" }, { name: "About", path: "/about" },
+            { name: "Events", path: "/events" }, { name: "Projects", path: "/projects" },
+            { name: "Team", path: "/team" }, { name: "Resources", path: "/resources" },
+            { name: "Contact", path: "/contact" }].map(({ name, path }) => (
             <button
               key={name}
               onClick={() => handleNavigation(path)}

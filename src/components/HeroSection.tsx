@@ -1,7 +1,8 @@
 
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-
+import AboutSection from './AboutSection';
 const HeroSection: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -60,11 +61,19 @@ const HeroSection: React.FC = () => {
     // Animation loop
     const interval = setInterval(drawMatrix, 40);
 
+
+
     return () => {
       clearInterval(interval);
       window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
+  const navigate = useNavigate();
+
+  const handleGetInvolvedClick = () => {
+    navigate('/events');
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Ensure it scrolls to the top
+  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -90,14 +99,14 @@ const HeroSection: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
             <button 
-              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={handleGetInvolvedClick}
               className="px-6 py-3 bg-cyber-green text-cyber-blue font-medium rounded-md inline-flex items-center hover:bg-cyber-light-green transition-colors duration-300"
             >
               Get Involved <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             
             <button 
-              onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-6 py-3 border border-cyber-green text-cyber-green font-medium rounded-md hover:bg-cyber-green/10 transition-colors duration-300"
             >
               Learn More
@@ -117,7 +126,9 @@ const HeroSection: React.FC = () => {
           </svg>
         </button>
       </div>
+  
     </section>
+    
   );
 };
 
