@@ -1,78 +1,75 @@
-
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import AboutSection from './AboutSection';
+
 const HeroSection: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const starsRef = useRef<{ x: number; y: number; z: number }[]>([]);
 
   useEffect(() => {
-    if (!canvasRef.current) return;
-
     const canvas = canvasRef.current;
+    if (!canvas) return;
+
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size to match window
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+
+      // Recalculate stars on resize
+      const numStars = Math.floor(canvas.width * canvas.height / 1000);
+      starsRef.current = Array.from({ length: numStars }, () => ({
+        x: Math.random() * canvas.width - canvas.width / 2,
+        y: Math.random() * canvas.height - canvas.height / 2,
+        z: Math.random() * canvas.width
+      }));
     };
 
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Matrix rain animation
-    const characters = '01'.split('');
-    const fontSize = 12;
-    const columns = canvas.width / fontSize;
-    const drops: number[] = [];
-
-    // Initial position of raindrops
-    for (let i = 0; i < columns; i++) {
-      drops[i] = Math.random() * -100;
-    }
-
-    const drawMatrix = () => {
-      // Semi-transparent black to create fade effect
-      ctx.fillStyle = 'rgba(10, 25, 47, 0.05)';
+    const drawStarfield = () => {
+      ctx.fillStyle = 'rgb(0, 0, 0)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = '#00FF41';
-      ctx.font = `${fontSize}px monospace`;
+      ctx.fillStyle = '#ffffff';
 
-      for (let i = 0; i < drops.length; i++) {
-        // Random character
-        const text = characters[Math.floor(Math.random() * characters.length)];
-        
-        // Draw the character
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      const speed = 1.5;
 
-        // Move drop down
-        drops[i]++;
-
-        // Reset drop position
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+      for (const star of starsRef.current) {
+        star.z -= speed;
+        if (star.z <= 0) {
+          star.x = Math.random() * canvas.width - canvas.width / 2;
+          star.y = Math.random() * canvas.height - canvas.height / 2;
+          star.z = canvas.width;
         }
+
+        const scale = canvas.width / star.z;
+        const x = star.x * scale + canvas.width / 2;
+        const y = star.y * scale + canvas.height / 2;
+
+        const radius = Math.max(0.5, 1.5 * scale); // Bigger as they approach
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        ctx.fill();
       }
+
+      requestAnimationFrame(drawStarfield);
     };
 
-    // Animation loop
-    const interval = setInterval(drawMatrix, 40);
-
-
+    drawStarfield();
 
     return () => {
-      clearInterval(interval);
       window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
+
   const navigate = useNavigate();
 
   const handleGetInvolvedClick = () => {
     navigate('/events');
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Ensure it scrolls to the top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -114,7 +111,7 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <button 
           onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
@@ -126,9 +123,7 @@ const HeroSection: React.FC = () => {
           </svg>
         </button>
       </div>
-  
     </section>
-    
   );
 };
 
