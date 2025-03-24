@@ -87,7 +87,7 @@ const ResourcesSection: React.FC = () => {
   return (
     <section id="resources" className="py-20 bg-cyber-blue">
       <div className="section-container">
-        <h2 className="section-title">Resource Hub</h2>
+        <h2 className="section-title">CyberGuide</h2>
         <p className="text-gray-300 mb-8 max-w-3xl">
           Access our curated cybersecurity resources, learning materials, tools, and guides to enhance your knowledge and skills.
         </p>

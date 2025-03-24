@@ -82,20 +82,15 @@ const Footer: React.FC = () => {
           
           {/* Column 3 */}
           <div>
-            <h3 className="text-white font-bold mb-4 text-lg">Subscribe to Updates</h3>
-            <p className="text-gray-400 mb-4">
-              Stay updated with our latest events, workshops, and cybersecurity resources.
-            </p>
-            <div className="flex">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="bg-cyber-blue/50 text-white border border-gray-700 rounded-l-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-cyber-green flex-grow"
-              />
-              <button className="bg-cyber-green text-cyber-blue px-4 py-2 rounded-r-md hover:bg-cyber-light-green transition-colors">
-                Subscribe
-              </button>
-            </div>
+          <div>
+  <h3 className="text-white font-bold mb-4 text-lg">Our Mission</h3>
+  <p className="text-gray-400">
+  Empower students with hands-on cybersecurity skills, promote ethical hacking, connect with industry experts, and contribute to open-source security while spreading cyber awareness.
+  </p>
+</div>
+
+
+
             <div className="flex items-bottom mt-5">
               <img
                 src="/nitclogo.png"

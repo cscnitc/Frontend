@@ -68,7 +68,7 @@ const AboutSection: React.FC = () => {
                   <h3 className="font-bold text-lg">Our Mission</h3>
                 </div>
                 <p className="text-gray-300 text-sm">
-                  To promote cybersecurity awareness, skill development, and ethical hacking practices among students.
+                Empower students with hands-on cybersecurity skills, promote ethical hacking, connect with industry experts, and contribute to open-source security while spreading cyber awareness.
                 </p>
               </div>
               <div className="glass-card p-5">
@@ -77,7 +77,8 @@ const AboutSection: React.FC = () => {
                   <h3 className="font-bold text-lg">Our Vision</h3>
                 </div>
                 <p className="text-gray-300 text-sm">
-                  To build a network of skilled cybersecurity professionals who contribute to a safer digital ecosystem.
+                To build a community of passionate ethical hackers, defenders, security enthusiasts, and problem-solvers who work towards digital resilience through learning,
+                collaboration, and problem-solving
                 </p>
               </div>
             </div>
