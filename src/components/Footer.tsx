@@ -40,13 +40,11 @@ const Footer: React.FC = () => {
               <a href="#" className="text-gray-400 hover:text-cyber-green transition-colors">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyber-green transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-cyber-green transition-colors">
+             
+              <a href="https://www.instagram.com/csc.nitc?igsh=MTA4bWI0dHl4dDZ0cw==" className="text-gray-400 hover:text-cyber-green transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyber-green transition-colors">
+              <a href="https://www.linkedin.com/company/cyber-secuirty-club-nitc/" className="text-gray-400 hover:text-cyber-green transition-colors">
                 <LinkedinIcon className="h-5 w-5" />
               </a>
             </div>
