@@ -47,12 +47,16 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isHeroSection && !isSolid ? "bg-transparent" : "bg-cyber-dark-blue/95 backdrop-blur-md shadow-md"
-      )}
-    >
+   <header
+  className={cn(
+    "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+    isHeroSection && !isSolid
+      ? "bg-transparent"
+      : "md:bg-cyber-dark-blue/95 md:backdrop-blur-md md:shadow-md bg-transparent"
+  )}
+>
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3">
           {/* Logo */}
@@ -94,7 +98,7 @@ const Navbar: React.FC = () => {
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="bg-cyber-dark-blue/95 backdrop-blur-md h-full flex flex-col pt-5">
+        <div className="bg-cyber-dark-blue/95 backdrop-blur-md shadow-md h-full flex flex-col pt-5">
           {[{ name: "Home", path: "/" }, { name: "About", path: "/about" },
             { name: "Events", path: "/events" }, { name: "Projects", path: "/projects" },
             { name: "Team", path: "/team" }, { name: "Resources", path: "/resources" },
