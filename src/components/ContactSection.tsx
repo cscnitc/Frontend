@@ -29,7 +29,7 @@ const ContactSection: React.FC = () => {
       setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
       
       /* BACKEND API CALL - COMMENTED OUT
-      const response = await fetch('http://localhost:1337/api/contact-messages', {
+      const response = await fetch('', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

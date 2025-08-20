@@ -23,7 +23,7 @@ const TeamSection: React.FC = () => {
     /*
     const fetchMembers = async () => {
       try {
-        const response = await axios.get("http://localhost:1337/api/team-members?populate=*");
+        const response = await axios.get("");
 
         // Transform API response to match TeamMember interface
         const formattedMembers: TeamMember[] = response.data.data.map((member: any) => ({
