@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios"; // Commented out - not needed for dummy data
 import { Github, Linkedin, Mail } from "lucide-react";
 
-// TeamMember interface matches your API structure
 interface TeamMember {
   id: number;
   documentId: string;
@@ -20,6 +19,8 @@ const TeamSection: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Commented out backend API call
+    /*
     const fetchMembers = async () => {
       try {
         const response = await axios.get("http://localhost:1337/api/team-members?populate=*");
@@ -47,8 +48,53 @@ const TeamSection: React.FC = () => {
     };
 
     fetchMembers();
+    */
+
+    // Using dummy data instead of API call
+    const dummyMembers: TeamMember[] = [
+      {
+        id: 1,
+        documentId: "member1",
+        name: "Alex Johnson",
+        role: "Club President",
+        specialization: "Ethical Hacking & Penetration Testing",
+        email: "alex.johnson@example.com",
+        linkedin: "https://linkedin.com/in/alexjohnson",
+        github: "https://github.com/alexjohnson",
+        profilePicture: "https://via.placeholder.com/200/0066CC/FFFFFF?text=AJ"
+      },
+      {
+        id: 2,
+        documentId: "member2",
+        name: "Sarah Chen",
+        role: "Vice President",
+        specialization: "Digital Forensics & Incident Response",
+        email: "sarah.chen@example.com",
+        linkedin: "https://linkedin.com/in/sarahchen",
+        github: "https://github.com/sarahchen",
+        profilePicture: "https://via.placeholder.com/200/00CC66/FFFFFF?text=SC"
+      },
+      {
+        id: 3,
+        documentId: "member3",
+        name: "Mike Rodriguez",
+        role: "Technical Lead",
+        specialization: "Network Security & Malware Analysis",
+        email: "mike.rodriguez@example.com",
+        linkedin: "https://linkedin.com/in/mikerodriguez",
+        github: "https://github.com/mikerodriguez",
+        profilePicture: "https://via.placeholder.com/200/CC6600/FFFFFF?text=MR"
+      }
+    ];
+
+    // Simulate loading delay (optional)
+    setTimeout(() => {
+      setMembers(dummyMembers);
+    }, 500);
   }, []);
-const mail=`https://mail.google.com/mail/?view=cm&fs=1&to=`
+
+  const mail = `https://mail.google.com/mail/?view=cm&fs=1&to=`
+
   return (
     <section id="team" className="py-20 bg-cyber-blue">
       <div className="section-container">
@@ -64,7 +110,7 @@ const mail=`https://mail.google.com/mail/?view=cm&fs=1&to=`
             <div key={member.id} className="glass-card overflow-hidden rounded-xl card-hover">
               <div className="relative h-60 mb-4 overflow-hidden">
                 <img
-                  src={member.profilePicture}
+                  src="/place.png"
                   alt={member.name}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
@@ -119,8 +165,6 @@ const mail=`https://mail.google.com/mail/?view=cm&fs=1&to=`
             </div>
           ))}
         </div>
-
-       
       </div>
     </section>
   );

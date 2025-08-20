@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, AlertCircle, CheckCircle } from 'lucide-react';
 
@@ -20,7 +19,16 @@ const ContactSection: React.FC = () => {
     e.preventDefault();
     setFormStatus('idle'); // Reset status
 
+    // Mock successful submission - backend call commented out
     try {
+      // Simulate a brief loading delay
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      // Always show success for now
+      setFormStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
+      
+      /* BACKEND API CALL - COMMENTED OUT
       const response = await fetch('http://localhost:1337/api/contact-messages', {
         method: 'POST',
         headers: {
@@ -42,6 +50,8 @@ const ContactSection: React.FC = () => {
       } else {
         setFormStatus('error');
       }
+      */
+      
     } catch (error) {
       console.error('Error submitting form:', error);
       setFormStatus('error');
@@ -50,6 +60,7 @@ const ContactSection: React.FC = () => {
     // Reset status after 3 seconds
     setTimeout(() => setFormStatus('idle'), 3000);
   };
+
   return (
     <section id="contact" className="py-20 bg-cyber-blue relative overflow-hidden">
       <div className="absolute inset-0 matrix-grid opacity-10"></div>
