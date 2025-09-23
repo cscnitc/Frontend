@@ -17,6 +17,7 @@ import ProjectsSection from './components/ProjectsSection';
 import TeamSection from './components/TeamSection';
 import ResourcesSection from './components/ResourcesSection';
 import ContactSection from './components/ContactSection';
+import CTFPage from "./components/CtfSection";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/team" element={<TeamSection />} />
           <Route path="/resources" element={<ResourcesSection />} />
           <Route path="/contact" element={<ContactSection />} />
+          <Route path="/ctf" element={<CTFPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer /> {/* Footer is always visible */}
