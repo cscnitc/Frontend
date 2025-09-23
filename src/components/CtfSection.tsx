@@ -50,7 +50,7 @@ const CTFPage: React.FC = () => {
   }, [ctfStartDate, ctfEndDate]);
 
   return (
-    <div className="py-20 min-h-screen bg-gradient-to-br from-cyber-dark via-cyber-blue to-cyber-dark text-white">
+    <div className=" min-h-screen bg-gradient-to-br from-cyber-dark via-cyber-blue to-cyber-dark text-white">
       {/* Hero Section */}
       <section className="relative py-12 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -73,7 +73,7 @@ const CTFPage: React.FC = () => {
           ))}
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 text-center">
+        <div className="py-20 relative max-w-6xl mx-auto px-4 text-center">
           <div className="mb-8">
             <Shield className="h-16 w-16 sm:h-20 sm:w-20 text-cyber-green mx-auto mb-4 animate-glow" />
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyber-green to-cyber-light-green bg-clip-text text-transparent animate-pulse-slow">
