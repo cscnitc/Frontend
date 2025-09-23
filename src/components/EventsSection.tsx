@@ -17,56 +17,56 @@ const EventsSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'upcoming' | 'past'>('upcoming');
   
   const events: Event[] = [
-    {
-      id: 1,
-      title: "Secure Coding Championship",
-      date: "November 15, 2023",
-      time: "10:00 AM - 5:00 PM",
-      location: "Computer Center",
-      type: "ctf",
-      description: "A day-long CTF event focused on secure coding practices and identifying vulnerabilities in web applications.",
-      isUpcoming: true
-    },
-    {
-      id: 2,
-      title: "Web Penetration Testing Workshop",
-      date: "November 25, 2023",
-      time: "2:00 PM - 4:00 PM",
-      location: "Lecture Hall Complex",
-      type: "workshop",
-      description: "Hands-on workshop covering essential web penetration testing techniques, tools, and methodologies.",
-      isUpcoming: true
-    },
-    {
-      id: 3,
-      title: "Cybersecurity in Critical Infrastructure",
-      date: "December 5, 2023",
-      time: "3:00 PM - 5:00 PM",
-      location: "Online (Zoom)",
-      type: "talk",
-      description: "Guest lecture by industry expert on securing critical infrastructure from cyber threats.",
-      isUpcoming: true
-    },
-    {
-      id: 4,
-      title: "Network Defense Challenge",
-      date: "October 10, 2023",
-      time: "9:00 AM - 6:00 PM",
-      location: "Computer Labs",
-      type: "ctf",
-      description: "Participants defended a simulated network against active attacks while maintaining services.",
-      isUpcoming: false
-    },
-    {
-      id: 5,
-      title: "Cryptography Basics Workshop",
-      date: "September 20, 2023",
-      time: "2:00 PM - 4:00 PM",
-      location: "Lecture Hall 3",
-      type: "workshop",
-      description: "Introduction to cryptographic concepts, algorithms, and their applications in security.",
-      isUpcoming: false
-    }
+    // {
+    //   id: 1,
+    //   title: "Secure Coding Championship",
+    //   date: "November 15, 2023",
+    //   time: "10:00 AM - 5:00 PM",
+    //   location: "Computer Center",
+    //   type: "ctf",
+    //   description: "A day-long CTF event focused on secure coding practices and identifying vulnerabilities in web applications.",
+    //   isUpcoming: true
+    // },
+    // {
+    //   id: 2,
+    //   title: "Web Penetration Testing Workshop",
+    //   date: "November 25, 2023",
+    //   time: "2:00 PM - 4:00 PM",
+    //   location: "Lecture Hall Complex",
+    //   type: "workshop",
+    //   description: "Hands-on workshop covering essential web penetration testing techniques, tools, and methodologies.",
+    //   isUpcoming: true
+    // },
+    // {
+    //   id: 3,
+    //   title: "Cybersecurity in Critical Infrastructure",
+    //   date: "December 5, 2023",
+    //   time: "3:00 PM - 5:00 PM",
+    //   location: "Online (Zoom)",
+    //   type: "talk",
+    //   description: "Guest lecture by industry expert on securing critical infrastructure from cyber threats.",
+    //   isUpcoming: true
+    // },
+    // {
+    //   id: 4,
+    //   title: "Network Defense Challenge",
+    //   date: "October 10, 2023",
+    //   time: "9:00 AM - 6:00 PM",
+    //   location: "Computer Labs",
+    //   type: "ctf",
+    //   description: "Participants defended a simulated network against active attacks while maintaining services.",
+    //   isUpcoming: false
+    // },
+    // {
+    //   id: 5,
+    //   title: "Cryptography Basics Workshop",
+    //   date: "September 20, 2023",
+    //   time: "2:00 PM - 4:00 PM",
+    //   location: "Lecture Hall 3",
+    //   type: "workshop",
+    //   description: "Introduction to cryptographic concepts, algorithms, and their applications in security.",
+    //   isUpcoming: false
+    // }
   ];
 
   const getEventIcon = (type: string) => {

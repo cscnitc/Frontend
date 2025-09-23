@@ -15,54 +15,54 @@ const ResourcesSection: React.FC = () => {
   const [selectedType, setSelectedType] = useState<string>('all');
   
   const resources: Resource[] = [
-    {
-      id: 1,
-      title: "Web Application Security Guide",
-      description: "Comprehensive guide on securing web applications, covering common vulnerabilities and best practices.",
-      type: "guide",
-      link: "#",
-      isExternal: false
-    },
-    {
-      id: 2,
-      title: "Malware Analysis Toolkit",
-      description: "Collection of tools and utilities for analyzing malicious software and understanding attack vectors.",
-      type: "tool",
-      link: "https://github.com/nitcsec/malware-toolkit",
-      isExternal: true
-    },
-    {
-      id: 3,
-      title: "CTF Roadmap for Beginners",
-      description: "Step-by-step learning path for those interested in participating in Capture the Flag competitions.",
-      type: "guide",
-      link: "#",
-      isExternal: false
-    },
-    {
-      id: 4,
-      title: "Intro to Cryptography",
-      description: "Beginner-friendly course on cryptographic algorithms, protocols, and their applications in security.",
-      type: "course",
-      link: "#",
-      isExternal: false
-    },
-    {
-      id: 5,
-      title: "Network Defense Strategies",
-      description: "Article on effective strategies and tools for defending networks against common attack vectors.",
-      type: "article",
-      link: "#",
-      isExternal: false
-    },
-    {
-      id: 6,
-      title: "Vulnerability Scanner",
-      description: "Open-source tool for identifying vulnerabilities in web applications and network services.",
-      type: "tool",
-      link: "https://github.com/nitcsec/vulnscan",
-      isExternal: true
-    }
+    // {
+    //   id: 1,
+    //   title: "Web Application Security Guide",
+    //   description: "Comprehensive guide on securing web applications, covering common vulnerabilities and best practices.",
+    //   type: "guide",
+    //   link: "#",
+    //   isExternal: false
+    // },
+    // {
+    //   id: 2,
+    //   title: "Malware Analysis Toolkit",
+    //   description: "Collection of tools and utilities for analyzing malicious software and understanding attack vectors.",
+    //   type: "tool",
+    //   link: "https://github.com/nitcsec/malware-toolkit",
+    //   isExternal: true
+    // },
+    // {
+    //   id: 3,
+    //   title: "CTF Roadmap for Beginners",
+    //   description: "Step-by-step learning path for those interested in participating in Capture the Flag competitions.",
+    //   type: "guide",
+    //   link: "#",
+    //   isExternal: false
+    // },
+    // {
+    //   id: 4,
+    //   title: "Intro to Cryptography",
+    //   description: "Beginner-friendly course on cryptographic algorithms, protocols, and their applications in security.",
+    //   type: "course",
+    //   link: "#",
+    //   isExternal: false
+    // },
+    // {
+    //   id: 5,
+    //   title: "Network Defense Strategies",
+    //   description: "Article on effective strategies and tools for defending networks against common attack vectors.",
+    //   type: "article",
+    //   link: "#",
+    //   isExternal: false
+    // },
+    // {
+    //   id: 6,
+    //   title: "Vulnerability Scanner",
+    //   description: "Open-source tool for identifying vulnerabilities in web applications and network services.",
+    //   type: "tool",
+    //   link: "https://github.com/nitcsec/vulnscan",
+    //   isExternal: true
+    // }
   ];
 
   const getResourceIcon = (type: string) => {
@@ -191,7 +191,7 @@ const ResourcesSection: React.FC = () => {
           </div>
         )}
         
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <div className="glass-card p-6 inline-block">
             <h4 className="text-xl font-bold mb-3 text-white">Weekly Cybersecurity Challenge</h4>
             <p className="text-gray-300 mb-4">
@@ -204,7 +204,7 @@ const ResourcesSection: React.FC = () => {
               View This Week's Challenge
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

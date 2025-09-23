@@ -13,48 +13,48 @@ interface Project {
 
 const ProjectsSection: React.FC = () => {
   const projects: Project[] = [
-    {
-      id: 1,
-      title: "SecureNet Scanner",
-      description: "An automated network vulnerability scanner with detailed reporting and remediation recommendations.",
-      tags: ["Python", "Network Security", "Vulnerability Assessment"],
-      icon: <Globe className="h-8 w-8 text-cyber-green" />,
-      github: "https://github.com/nitcsec/securenet",
-      demo: "#"
-    },
-    {
-      id: 2,
-      title: "CipherGuard",
-      description: "End-to-end encrypted messaging application with military-grade encryption and zero knowledge architecture.",
-      tags: ["React", "Node.js", "Cryptography"],
-      icon: <Lock className="h-8 w-8 text-cyber-green" />,
-      github: "https://github.com/nitcsec/cipherguard"
-    },
-    {
-      id: 3,
-      title: "WebVulnLab",
-      description: "Deliberately vulnerable web application for practicing common web security exploits in a controlled environment.",
-      tags: ["Web Security", "PHP", "JavaScript"],
-      icon: <Code className="h-8 w-8 text-cyber-green" />,
-      github: "https://github.com/nitcsec/webvulnlab",
-      demo: "#"
-    },
-    {
-      id: 4,
-      title: "PenTest Framework",
-      description: "Comprehensive penetration testing framework with automated reconnaissance, scanning, and exploitation modules.",
-      tags: ["Python", "Bash", "Penetration Testing"],
-      icon: <Shield className="h-8 w-8 text-cyber-green" />,
-      github: "https://github.com/nitcsec/pentestfw"
-    },
-    {
-      id: 5,
-      title: "OSINT Toolkit",
-      description: "Collection of open-source intelligence gathering tools for digital forensics investigations.",
-      tags: ["OSINT", "Python", "Data Mining"],
-      icon: <Database className="h-8 w-8 text-cyber-green" />,
-      github: "https://github.com/nitcsec/osinttoolkit"
-    }
+    // {
+    //   id: 1,
+    //   title: "SecureNet Scanner",
+    //   description: "An automated network vulnerability scanner with detailed reporting and remediation recommendations.",
+    //   tags: ["Python", "Network Security", "Vulnerability Assessment"],
+    //   icon: <Globe className="h-8 w-8 text-cyber-green" />,
+    //   github: "https://github.com/nitcsec/securenet",
+    //   demo: "#"
+    // },
+    // {
+    //   id: 2,
+    //   title: "CipherGuard",
+    //   description: "End-to-end encrypted messaging application with military-grade encryption and zero knowledge architecture.",
+    //   tags: ["React", "Node.js", "Cryptography"],
+    //   icon: <Lock className="h-8 w-8 text-cyber-green" />,
+    //   github: "https://github.com/nitcsec/cipherguard"
+    // },
+    // {
+    //   id: 3,
+    //   title: "WebVulnLab",
+    //   description: "Deliberately vulnerable web application for practicing common web security exploits in a controlled environment.",
+    //   tags: ["Web Security", "PHP", "JavaScript"],
+    //   icon: <Code className="h-8 w-8 text-cyber-green" />,
+    //   github: "https://github.com/nitcsec/webvulnlab",
+    //   demo: "#"
+    // },
+    // {
+    //   id: 4,
+    //   title: "PenTest Framework",
+    //   description: "Comprehensive penetration testing framework with automated reconnaissance, scanning, and exploitation modules.",
+    //   tags: ["Python", "Bash", "Penetration Testing"],
+    //   icon: <Shield className="h-8 w-8 text-cyber-green" />,
+    //   github: "https://github.com/nitcsec/pentestfw"
+    // },
+    // {
+    //   id: 5,
+    //   title: "OSINT Toolkit",
+    //   description: "Collection of open-source intelligence gathering tools for digital forensics investigations.",
+    //   tags: ["OSINT", "Python", "Data Mining"],
+    //   icon: <Database className="h-8 w-8 text-cyber-green" />,
+    //   github: "https://github.com/nitcsec/osinttoolkit"
+    // }
   ];
 
   return (

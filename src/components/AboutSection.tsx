@@ -85,7 +85,7 @@ const AboutSection: React.FC = () => {
           </div>
 
           {/* Right column - Achievement stats */}
-          <div className="w-full md:w-1/2 mt-10 md:mt-0 animate-page-transition opacity-0" style={{ animationDelay: '0.2s' }}>
+          {/* <div className="w-full md:w-1/2 mt-10 md:mt-0 animate-page-transition opacity-0" style={{ animationDelay: '0.2s' }}>
             <div className="glass-card p-8 relative overflow-hidden">
               <div className="absolute inset-0 matrix-grid opacity-25"></div>
               <h3 className="text-2xl font-bold mb-6 text-cyber-green">Club Achievements</h3>
@@ -130,7 +130,7 @@ const AboutSection: React.FC = () => {
 
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
