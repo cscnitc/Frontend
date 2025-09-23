@@ -119,7 +119,7 @@ const ProjectsSection: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <a 
             href="https://github.com/nitcsec" 
             target="_blank" 
@@ -129,7 +129,7 @@ const ProjectsSection: React.FC = () => {
             <Github className="mr-2 h-5 w-5" />
             Visit Our GitHub Organization
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -190,7 +190,7 @@ const ContactSection: React.FC = () => {
                     <h4 className="font-medium text-white mb-1">Email Us</h4>
                     <p className="text-gray-300 text-sm">
                       <a href="mailto:cybersec@nitc.ac.in" className="hover:text-cyber-green">
-                        cybersec@nitc.ac.in
+                        csc@nitc.ac.in
                       </a>
                     </p>
                   </div>
@@ -201,7 +201,6 @@ const ContactSection: React.FC = () => {
                   <div>
                     <h4 className="font-medium text-white mb-1">Club Location</h4>
                     <p className="text-gray-300 text-sm">
-                      Computer Science Department<br />
                       NIT Calicut, Kerala<br />
                       India - 673601
                     </p>
@@ -210,7 +209,7 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
             
-            <div className="glass-card p-8 rounded-xl">
+            {/* <div className="glass-card p-8 rounded-xl">
               <h3 className="text-xl font-bold mb-6 text-white">Meeting Schedule</h3>
               <div className="space-y-4">
                 <div className="border-l-2 border-cyber-green pl-4">
@@ -228,7 +227,7 @@ const ContactSection: React.FC = () => {
                   <p className="text-gray-300 text-sm">Every Sunday, 2:00 PM - 5:00 PM</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
