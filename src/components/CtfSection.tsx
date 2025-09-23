@@ -50,7 +50,7 @@ const CTFPage: React.FC = () => {
   }, [ctfStartDate, ctfEndDate]);
 
   return (
-    <div className="min-h-screen  bg-cyber-blue">
+    <div className="bg-cyber-blue">
       <section className="relative py-12 sm:py-20">
         {/* Static overlay instead of animated matrix */}
         <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>

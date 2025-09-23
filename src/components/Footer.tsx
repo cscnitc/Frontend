@@ -67,6 +67,9 @@ const Footer: React.FC = () => {
                 <button onClick={() => handleNavigation('/projects')} className="text-gray-400 hover:text-cyber-green transition-colors">Projects</button>
               </li>
               <li>
+                <button onClick={() => handleNavigation('/ctf')} className="text-gray-400 hover:text-cyber-green transition-colors">CTF</button>
+              </li>
+              <li>
                 <button onClick={() => handleNavigation('/team')} className="text-gray-400 hover:text-cyber-green transition-colors">Team</button>
               </li>
               <li>
