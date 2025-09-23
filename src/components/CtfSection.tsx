@@ -50,33 +50,15 @@ const CTFPage: React.FC = () => {
   }, [ctfStartDate, ctfEndDate]);
 
   return (
-    <div className=" min-h-screen bg-gradient-to-br from-cyber-dark via-cyber-blue to-cyber-dark text-white">
-      {/* Hero Section */}
-      <section className="relative py-12 sm:py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-
-        {/* Matrix Background Effect */}
-        <div className="absolute inset-0 opacity-10">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute animate-matrix-fade"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 2}s`,
-                fontSize: `${Math.random() * 12 + 8}px`, // smaller for phones
-              }}
-            >
-              {Math.random().toString(36).substring(2, 8)}
-            </div>
-          ))}
-        </div>
+    <div className="min-h-screen  bg-cyber-blue">
+      <section className="relative py-12 sm:py-20">
+        {/* Static overlay instead of animated matrix */}
+        <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
 
         <div className="py-20 relative max-w-6xl mx-auto px-4 text-center">
           <div className="mb-8">
-            <Shield className="h-16 w-16 sm:h-20 sm:w-20 text-cyber-green mx-auto mb-4 animate-glow" />
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyber-green to-cyber-light-green bg-clip-text text-transparent animate-pulse-slow">
+            <Shield className="h-16 w-16 sm:h-20 sm:w-20 text-cyber-green mx-auto mb-4" />
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 text-cyber-green">
               TATHVA CTF
             </h1>
             <div className="flex items-center justify-center gap-2 sm:gap-4 text-cyber-green mb-8">
@@ -106,10 +88,11 @@ const CTFPage: React.FC = () => {
                 </div>
               ))}
             </div>
+
             {isLive && (
               <div className="mt-6">
-                <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-red-600 text-white rounded-full animate-pulse">
-                  <div className="w-2 h-2 bg-white rounded-full mr-2 animate-ping"></div>
+                <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-red-600 text-white rounded-full">
+                  <div className="w-2 h-2 bg-white rounded-full mr-2"></div>
                   LIVE NOW
                 </div>
               </div>
