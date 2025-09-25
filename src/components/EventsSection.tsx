@@ -11,22 +11,39 @@ interface Event {
   type: 'ctf' | 'workshop' | 'talk';
   description: string;
   isUpcoming: boolean;
+    registerLink?: string;
+
 }
 
 const EventsSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'upcoming' | 'past'>('upcoming');
   
   const events: Event[] = [
-    // {
-    //   id: 1,
-    //   title: "Secure Coding Championship",
-    //   date: "November 15, 2023",
-    //   time: "10:00 AM - 5:00 PM",
-    //   location: "Computer Center",
-    //   type: "ctf",
-    //   description: "A day-long CTF event focused on secure coding practices and identifying vulnerabilities in web applications.",
-    //   isUpcoming: true
-    // },
+   {
+  id: 1,
+  title: "Cryptography & Cryptanalysis",
+  date: "September 27, 2025",
+  time: "10:00 AM - 12:30 PM",
+  location: "SSL, IT Complex",
+  type: "workshop",
+  description: "The cryptography session, conducted jointly with MathSoc, will cover mathematical fundamentals of cryptography, classical and modern attacks, and introduce advanced topics such as zero-knowledge proofs.",
+  isUpcoming: true,
+    registerLink: "https://forms.gle/PspgVsBMcg7bYkFL9"
+
+},
+{
+  id: 2,
+  title: "Introduction to Reverse Engineering",
+  date: "September 27, 2025",
+  time: "1:30 PM - 4:00 PM",
+  location: "SSL, IT Complex",
+  type: "workshop",
+  description: "The reverse engineering session will cover both static and dynamic analysis techniques, and conclude with a brief overview of anti-mitigation approaches.",
+  isUpcoming: true,
+    registerLink: "https://forms.gle/PspgVsBMcg7bYkFL9"
+
+}
+
     // {
     //   id: 2,
     //   title: "Web Penetration Testing Workshop",
@@ -153,12 +170,18 @@ const EventsSection: React.FC = () => {
                   </div>
                   
                   {event.isUpcoming && (
-                    <div className="sm:w-1/4 flex sm:justify-end mt-4 sm:mt-0">
-                      <button className="px-4 py-2 bg-cyber-green/10 border border-cyber-green text-cyber-green rounded-md flex items-center transition-colors hover:bg-cyber-green hover:text-cyber-blue">
-                        Register <ArrowRight className="ml-2 h-4 w-4" />
-                      </button>
-                    </div>
-                  )}
+  <div className="sm:w-1/4 flex sm:justify-end mt-4 sm:mt-0">
+    <a
+      href={event.registerLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-4 py-2 bg-cyber-green/10 border border-cyber-green text-cyber-green rounded-md flex items-center transition-colors hover:bg-cyber-green hover:text-cyber-blue"
+    >
+      Register <ArrowRight className="ml-2 h-4 w-4" />
+    </a>
+  </div>
+)}
+
                 </div>
               </div>
             ))

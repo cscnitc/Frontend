@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
           <nav className="hidden md:flex space-x-7">
             {[{ name: "Home", path: "/" }, { name: "About", path: "/about" },
               { name: "Events", path: "/events" }, { name: "Projects", path: "/projects" },{ name: "CTF", path: "/ctf" },
-              { name: "Team", path: "/team" }, { name: "Resources", path: "/resources" },
+              { name: "Team", path: "/team" }, 
               { name: "Contact", path: "/contact" }].map(({ name, path }) => (
               <button
                 key={name}
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
         <div className="bg-cyber-dark-blue/95 backdrop-blur-md shadow-md h-full flex flex-col pt-5">
           {[{ name: "Home", path: "/" }, { name: "About", path: "/about" },
             { name: "Events", path: "/events" }, { name: "Projects", path: "/projects" },{ name: "CTF", path: "/ctf" },
-            { name: "Team", path: "/team" }, { name: "Resources", path: "/resources" },
+            { name: "Team", path: "/team" }, 
             { name: "Contact", path: "/contact" }].map(({ name, path }) => (
             <button
               key={name}
