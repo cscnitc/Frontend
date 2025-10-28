@@ -180,7 +180,7 @@ const CTFPage: React.FC = () => {
                   <h4 className="text-lg font-bold text-cyber-green">Venue</h4>
                 </div>
                 <p className="text-gray-300 text-sm">
-                  NIT Calicut (Physical venue required)
+                  NIT Calicut
                 </p>
               </div>
 
